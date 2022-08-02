@@ -34,14 +34,14 @@ jobs:
         client-secret: ${{ secrets.secret }}
         tenant-id: ${{env.TENANT_ID}}
 
-#    - name: export-solution action
-#      uses: microsoft/powerplatform-actions/export-solution@v0
-#      with:
-#        environment-url: 'https://rucarval.crm4.dynamics.com/'
-#        user-name: 'appuser@dynfteemea.onmicrosoft.com'
-#        password-secret: ${{ secrets.secret }}
-#        solution-name: Layer2SecRoles
-#        solution-output-file: out/exported/Layer2SecRoles.zip
+    - name: export-solution action
+      uses: microsoft/powerplatform-actions/export-solution@v0
+      with:
+        environment-url: 'https://rucarval.crm4.dynamics.com/'
+        user-name: 'appuser@dynfteemea.onmicrosoft.com'
+        password-secret: ${{ secrets.secret }}
+        solution-name: Layer2SecRoles
+        solution-output-file: out/exported/Layer2SecRoles.zip
 
 #    - name: unpack-solution action
 #      uses: microsoft/powerplatform-actions/unpack-solution@v0
