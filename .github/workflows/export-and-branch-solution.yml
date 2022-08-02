@@ -8,6 +8,12 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    
+env:
+#edit your values here
+  ENVIRONMENT_URL: 'https://rucarval.crm4.dynamics.com'
+  CLIENT_ID: '21709150-affa-425c-aaca-be744f5587f1'
+  TENANT_ID: '2a8ec2df-8e78-4b68-9c4f-fc4beca01fc9'
 
 jobs:
   export-from-dev:
@@ -23,18 +29,19 @@ jobs:
     - name: who-am-i action
       uses: microsoft/powerplatform-actions/who-am-i@v0
       with:
-        environment-url: 'https://rucarval.crm4.dynamics.com/'
-        user-name: 'rucarval@dynfteemea.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        app-id: ${{env.CLIENT_ID}}
+        client-secret: ${{ secrets.secret }}
+        tenant-id: ${{env.TENANT_ID}}
 
-    - name: export-solution action
-      uses: microsoft/powerplatform-actions/export-solution@v0
-      with:
-        environment-url: 'https://rucarval.crm4.dynamics.com/'
-        user-name: 'rucarval@dynfteemea.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
-        solution-name: Layer2SecRoles
-        solution-output-file: out/exported/Layer2SecRoles.zip
+#    - name: export-solution action
+#      uses: microsoft/powerplatform-actions/export-solution@v0
+#      with:
+#        environment-url: 'https://rucarval.crm4.dynamics.com/'
+#        user-name: 'appuser@dynfteemea.onmicrosoft.com'
+#        password-secret: ${{ secrets.secret }}
+#        solution-name: Layer2SecRoles
+#        solution-output-file: out/exported/Layer2SecRoles.zip
 
 #    - name: unpack-solution action
 #      uses: microsoft/powerplatform-actions/unpack-solution@v0
