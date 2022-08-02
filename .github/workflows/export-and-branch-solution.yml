@@ -57,7 +57,7 @@ jobs:
         password-secret: ${{ secrets.secret }}
         solution-name: Layer2SecRoles
         solution-output-file: 'test.zip'
-        working-directory: 'out'
+#        working-directory: 'out'
         managed: true
 
 #    - name: unpack-solution action
