@@ -56,7 +56,7 @@ jobs:
         tenant-id: ${{env.TENANT_ID}}
         password-secret: ${{ secrets.secret }}
         solution-name: Layer2SecRoles
-        solution-output-file: 'test.zip'
+        solution-output-file: 'out/test.zip'
 #        working-directory: 'out'
         managed: true
 
